@@ -13,6 +13,8 @@ import {
 import {
     SubTitle,
 } from '../../mixins';
+import { LoginIconStyled } from './loginForm.styles';
+
 
 const LoginForm = ({ setLoginAndPassword }) => {
     const passwordRef = useRef(null);
@@ -43,7 +45,7 @@ const LoginForm = ({ setLoginAndPassword }) => {
     return (
         <Container>
             <SubTitle>
-                Welcom:)
+                Welcome:)
             </SubTitle>
             <FormWrapper>
                 <StyledInput
@@ -65,6 +67,7 @@ const LoginForm = ({ setLoginAndPassword }) => {
                 )}
                 <StyledButton onClick={handleLoginButton}>
                     Login
+                    <LoginIconStyled />
                 </StyledButton>
             </FormWrapper>
         </Container>

@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
     background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
     transition: 0.3s;
     &:hover {
     cursor: pointer;
@@ -12,5 +14,4 @@ export const Button = styled.button`
     border-radius: 4px;
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
     }
-
 `;

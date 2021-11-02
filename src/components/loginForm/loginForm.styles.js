@@ -6,6 +6,12 @@ import {
 import { BLACK } from '../../constants';
 import { RED } from '../../constants';
 import BackGroundImg from '../../assets/img/bg.jpg';
+import { ReactComponent as LoginIcon } from '../../assets/svg/sign-in-alt-solid.svg';
+
+export const LoginIconStyled = styled(LoginIcon)`
+    height: 20px;
+    fill: red;
+`;
 
 export const LoginFormTopMargin = css`
     margin-top: 10px;
@@ -61,4 +67,7 @@ export const StyledInput = styled(Input)`
 export const StyledButton = styled(Button)`
    ${LoginFormTopMargin}
    ${LoginFormInputButton}
+   align-items: center;
+   padding: 0 10px;
+
 `;
