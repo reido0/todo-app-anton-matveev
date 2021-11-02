@@ -5,6 +5,8 @@ import React, {
 } from 'react';
 import {
     Container,
+    FormWrapper,
+    FormErrorText,
     StyledButton,
     StyledInput,
 } from './loginForm.styles';
@@ -41,28 +43,30 @@ const LoginForm = ({ setLoginAndPassword }) => {
     return (
         <Container>
             <SubTitle>
-                Please enter Login and Password
+                Welcom:)
             </SubTitle>
-            <StyledInput
-                onChange={handleInputChange}
-                placeholder="Email"
-                ref={emailRef}
-                type="email"
-            />
-            <StyledInput
-                onChange={handleInputChange}
-                placeholder="Password"
-                ref={passwordRef}
-                type="Password"
-            />
-            {loginError && (
-                <p>
-                    Incorrect Login or Password!
-                </p>
-            )}
-            <StyledButton onClick={handleLoginButton}>
-                Login
-            </StyledButton>
+            <FormWrapper>
+                <StyledInput
+                    onChange={handleInputChange}
+                    placeholder="Email"
+                    ref={emailRef}
+                    type="email"
+                />
+                <StyledInput
+                    onChange={handleInputChange}
+                    placeholder="Password"
+                    ref={passwordRef}
+                    type="Password"
+                />
+                {loginError && (
+                    <FormErrorText>
+                        Incorrect Login or Password!
+                    </FormErrorText>
+                )}
+                <StyledButton onClick={handleLoginButton}>
+                    Login
+                </StyledButton>
+            </FormWrapper>
         </Container>
     );
 };
