@@ -1,20 +1,27 @@
-import { SET_LOGIN_AND_PASSWORD } from './loginForm.constants';
+import {
+    SET_IS_USER_LOGGED,
+    SET_USER_ID,
+} from './loginForm.constants';
 
 const initialState = {
-    login: '',
-    password: '',
+    isUserLogged: false,
+    userId: '',
 };
 
-export const loginFormReducer = (
+export const loginForm = (
     state = initialState,
     action,
 ) => {
     switch (action.type) {
-        case SET_LOGIN_AND_PASSWORD:
+        case SET_IS_USER_LOGGED:
             return {
                 ...state,
-                login: action.login,
-                password: action.password,
+                isUserLogged: action.payload,
+            };
+        case SET_USER_ID:
+            return {
+                ...state,
+                userId: action.payload,
             };
         default:
             return state;

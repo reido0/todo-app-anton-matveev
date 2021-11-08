@@ -6,11 +6,10 @@ import {
 import { BLACK } from '../../constants';
 import { RED } from '../../constants';
 import BackGroundImg from '../../assets/img/bg.jpg';
-import { ReactComponent as LoginIcon } from '../../assets/svg/sign-in-alt-solid.svg';
+import { ReactComponent as SignInIcon } from '../../assets/svg/signInIcon.svg';
 
-export const LoginIconStyled = styled(LoginIcon)`
+export const LoginIconStyled = styled(SignInIcon)`
     height: 20px;
-    fill: red;
 `;
 
 export const LoginFormTopMargin = css`
@@ -50,13 +49,14 @@ export const FormWrapper = styled.div`
     align-items: center;
     border-radius: 4px;
     border: 1px solid ${BLACK};
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 10px;
     padding: 0 10px 10px;
     width: 300px;
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
 `;
 
 export const StyledInput = styled(Input)`

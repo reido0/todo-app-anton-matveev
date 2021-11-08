@@ -2,8 +2,10 @@ import {
     fork,
     all,
 } from 'redux-saga/effects';
-// import { watchMoviesSagas } from './movies/movies.saga';
+import { watchLoginFormSagas } from './loginForm/loginForm.sagas';
 
 export default function* root() {
-    yield all([]);
+    yield all([
+        fork(watchLoginFormSagas),
+    ]);
 };

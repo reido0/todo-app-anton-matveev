@@ -1,8 +1,11 @@
 import React, {
     useCallback,
+    useEffect,
     useRef,
     useState,
 } from 'react';
+import { useHistory } from "react-router-dom";
+import PropTypes from 'prop-types';
 import {
     Container,
     FormWrapper,
@@ -14,12 +17,17 @@ import {
     SubTitle,
 } from '../../mixins';
 import { LoginIconStyled } from './loginForm.styles';
+import { ROUTES } from '../../constants';
 
-
-const LoginForm = ({ setLoginAndPassword }) => {
+const LoginForm = ({
+    isUserLogged,
+    setLoginAndPassword,
+}) => {
+    const history = useHistory();
     const passwordRef = useRef(null);
     const emailRef = useRef(null);
     const [loginError, setLoginError] = useState(false);
+    const [hasUserExist, setHasUserExist] = useState(false);
 
     const handleLoginButton = useCallback(() => {
         const email = emailRef.current.value;
@@ -27,20 +35,36 @@ const LoginForm = ({ setLoginAndPassword }) => {
 
         if (email && password) {
             setLoginError(false);
-            setLoginAndPassword(email, password);
+            setHasUserExist(true);
+
+            setLoginAndPassword({
+                login: email,
+                password,
+            });
 
             return;
         }
 
         setLoginError(true);
+        setHasUserExist(false);
     }, [
-        setLoginError,
+        setHasUserExist,
         setLoginAndPassword,
+        setLoginError,
     ]);
 
     const handleInputChange = useCallback(() => {
         setLoginError(false);
     }, [setLoginError]);
+
+    useEffect(() => {
+        if (isUserLogged) {
+            history.push(ROUTES.CARDS);
+        }
+    }, [
+        history,
+        isUserLogged,
+    ]);
 
     return (
         <Container>
@@ -65,6 +89,11 @@ const LoginForm = ({ setLoginAndPassword }) => {
                         Incorrect Login or Password!
                     </FormErrorText>
                 )}
+                {hasUserExist && !isUserLogged && (
+                    <FormErrorText>
+                        User or Password not found!
+                    </FormErrorText>
+                )}
                 <StyledButton onClick={handleLoginButton}>
                     Login
                     <LoginIconStyled />
@@ -72,6 +101,11 @@ const LoginForm = ({ setLoginAndPassword }) => {
             </FormWrapper>
         </Container>
     );
+};
+
+LoginForm.propTypes = {
+    isUserLogged: PropTypes.bool,
+    setLoginAndPassword: PropTypes.func,
 };
 
 export default React.memo(LoginForm);
