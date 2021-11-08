@@ -3,8 +3,7 @@ import {
     Button,
     Input,
 } from '../../mixins';
-import { BLACK } from '../../constants';
-import { RED } from '../../constants';
+import { PALLETE } from '../../constants';
 import BackGroundImg from '../../assets/img/bg.jpg';
 import { ReactComponent as SignInIcon } from '../../assets/svg/signInIcon.svg';
 
@@ -18,7 +17,7 @@ export const LoginFormTopMargin = css`
 
 export const LoginFormInputButton = css`
     border-radius: 4px;
-    border: 1px solid ${BLACK};
+    border: 1px solid ${PALLETE.BLACK};
     font-size: 16px;
     font-weight: 400;
     height: 30px;
@@ -28,8 +27,8 @@ export const LoginFormInputButton = css`
 `;
 
 export const FormErrorText = styled.p`
+    color: ${PALLETE.ERROR};
     margin-top: 10px;
-    color: ${RED};
 `;
 
 export const Container = styled.div`
@@ -47,16 +46,16 @@ export const Container = styled.div`
 
 export const FormWrapper = styled.div`
     align-items: center;
+    backdrop-filter: blur(5px);
+    background-color: #fff6;
     border-radius: 4px;
-    border: 1px solid ${BLACK};
-    background-color: #fff;
+    border: 1px solid ${PALLETE.BLACK};
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 10px;
     padding: 0 10px 10px;
     width: 300px;
-    /* backdrop-filter: blur(5px); */
 `;
 
 export const StyledInput = styled(Input)`
@@ -68,6 +67,6 @@ export const StyledButton = styled(Button)`
    ${LoginFormTopMargin}
    ${LoginFormInputButton}
    align-items: center;
+   background-color: ${PALLETE.BUTTON_FORM};
    padding: 0 10px;
-
 `;

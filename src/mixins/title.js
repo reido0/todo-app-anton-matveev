@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { BLACK } from '../constants';
+import { PALLETE } from '../constants';
 
 export const SubTitle = styled.h2`
-    color: ${BLACK};
+    color: ${PALLETE.BLACK};
 `;
