@@ -21,10 +21,44 @@ export const CARDS_STATE = {
 
 export const MOCKED_CARDS = [
     {
+        task: 'Task',
         description: 'Description',
         owner: '001',
         state: CARDS_STATE.TODO,
         timestamp: '',
         title: 'Title',
     },
+    {
+        task: 'Task',
+        description: 'Description',
+        owner: '001',
+        state: CARDS_STATE.TODO,
+        timestamp: '',
+        title: 'Title',
+    },
+    {
+        task: 'Task',
+        description: 'Description',
+        owner: '001',
+        state: CARDS_STATE.IN_PROGRESS,
+        timestamp: '',
+        title: 'Title',
+    },
+    {
+        task: 'Task',
+        description: 'Description',
+        owner: '001',
+        state: CARDS_STATE.IN_PROGRESS,
+        timestamp: '',
+        title: 'Title',
+    },
+    {
+        task: 'Task',
+        description: 'Description',
+        owner: '001',
+        state: CARDS_STATE.TODO,
+        timestamp: '',
+        title: 'Title',
+    },
+
 ];

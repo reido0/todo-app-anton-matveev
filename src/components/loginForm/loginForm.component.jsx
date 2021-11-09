@@ -7,10 +7,10 @@ import React, {
 import { useHistory } from "react-router-dom";
 import PropTypes from 'prop-types';
 import {
-    Container,
-    FormWrapper,
     FormErrorText,
+    FormWrapper,
     StyledButton,
+    StyledContainer,
     StyledInput,
 } from './loginForm.styles';
 import {
@@ -67,7 +67,7 @@ const LoginForm = ({
     ]);
 
     return (
-        <Container>
+        <StyledContainer>
             <SubTitle>
                 Welcome:)
             </SubTitle>
@@ -99,7 +99,7 @@ const LoginForm = ({
                     <LoginIconStyled />
                 </StyledButton>
             </FormWrapper>
-        </Container>
+        </StyledContainer>
     );
 };
 

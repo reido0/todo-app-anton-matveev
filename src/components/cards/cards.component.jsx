@@ -4,7 +4,7 @@ import React, {
 import { useHistory } from "react-router-dom";
 import PropTypes from 'prop-types';
 import {
-    Container,
+    StyledContainer,
 } from './cards.styles';
 import { ROUTES } from '../../constants';
 
@@ -23,12 +23,12 @@ const Cards = ({
         isUserLogged,
     ]);
 
-    console.log(222, userId);
+    console.log(222, `user ${userId}`);
 
     return (
-        <Container>
+        <StyledContainer>
             QWE
-        </Container>
+        </StyledContainer>
     );
 };
 

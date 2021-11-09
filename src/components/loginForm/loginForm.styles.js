@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 import {
     Button,
+    Container,
     Input,
 } from '../../mixins';
 import { PALLETE } from '../../constants';
-import BackGroundImg from '../../assets/img/bg.jpg';
 import { ReactComponent as SignInIcon } from '../../assets/svg/signInIcon.svg';
 
 export const LoginIconStyled = styled(SignInIcon)`
@@ -31,17 +31,7 @@ export const FormErrorText = styled.p`
     margin-top: 10px;
 `;
 
-export const Container = styled.div`
-    align-items: center;
-    background-image: url(${BackGroundImg});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    position: relative;
+export const StyledContainer = styled(Container)`
 `;
 
 export const FormWrapper = styled.div`
