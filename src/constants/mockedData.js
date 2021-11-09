@@ -27,7 +27,7 @@ export const MOCKED_CARDS = [
         taskDescription: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium animi officia natus, voluptatibus aliquid perspiciatis.',
         taskName: '0',
         timestamp: '',
-        userName: 'Anton',
+        userName: 'Anton M',
     },
     {
         isDone: false,
@@ -36,7 +36,7 @@ export const MOCKED_CARDS = [
         taskDescription: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium animi officia natus, voluptatibus aliquid perspiciatis.',
         taskName: '0',
         timestamp: '',
-        userName: 'Anton',
+        userName: 'Anton M',
     },
     {
         isDone: false,
@@ -45,7 +45,7 @@ export const MOCKED_CARDS = [
         taskDescription: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium animi officia natus, voluptatibus aliquid perspiciatis.',
         taskName: '0',
         timestamp: '',
-        userName: 'Anton',
+        userName: 'Anton M',
     },
     {
         isDone: false,
@@ -54,7 +54,7 @@ export const MOCKED_CARDS = [
         taskDescription: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium animi officia natus, voluptatibus aliquid perspiciatis.',
         taskName: '0',
         timestamp: '',
-        userName: 'Anton',
+        userName: 'Anton M',
     },
     {
         isDone: true,
@@ -63,7 +63,7 @@ export const MOCKED_CARDS = [
         taskDescription: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium animi officia natus, voluptatibus aliquid perspiciatis.',
         taskName: '0',
         timestamp: '',
-        userName: 'Anton',
+        userName: 'Anton M',
     },
 
 ];
