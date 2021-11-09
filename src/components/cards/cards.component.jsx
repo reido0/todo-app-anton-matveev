@@ -7,6 +7,7 @@ import {
     StyledContainer,
 } from './cards.styles';
 import { ROUTES } from '../../constants';
+import { MOCKED_CARDS } from '../../constants';
 
 const Cards = ({
     isUserLogged,
@@ -27,7 +28,7 @@ const Cards = ({
 
     return (
         <StyledContainer>
-            QWE
+            CARDS
         </StyledContainer>
     );
 };
