@@ -28,7 +28,7 @@ const Cards = ({
 
     return (
         <StyledContainer>
-            CARDS
+            {MOCKED_CARDS.map((card) => <div>{card.taskName}</div>)}
         </StyledContainer>
     );
 };
