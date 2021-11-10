@@ -40,6 +40,7 @@ export const FormWrapper = styled.div`
     background-color: #fff6;
     border-radius: 4px;
     border: 1px solid ${PALLETE.BLACK};
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.7);
     display: flex;
     flex-direction: column;
     justify-content: center;

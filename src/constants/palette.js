@@ -3,5 +3,6 @@ export const PALLETE = {
     BG_FORM: '#fff6',
     BLACK: '#000',
     BUTTON_FORM: '#5fc00087',
+    GRAY: '#666',
     ERROR: '#930000',
 };
