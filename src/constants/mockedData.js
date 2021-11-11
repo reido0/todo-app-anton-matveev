@@ -21,6 +21,7 @@ export const CARDS_STATE = {
 
 export const MOCKED_CARDS = [
     {
+        id: '001',
         isDone: false,
         owner: '001',
         state: CARDS_STATE.TODO,
@@ -30,6 +31,7 @@ export const MOCKED_CARDS = [
         userName: 'Anton M',
     },
     {
+        id: '001',
         isDone: false,
         owner: '001',
         state: CARDS_STATE.TODO,
@@ -39,6 +41,7 @@ export const MOCKED_CARDS = [
         userName: 'Anton M',
     },
     {
+        id: '001',
         isDone: false,
         owner: '001',
         state: CARDS_STATE.IN_PROGRESS,
@@ -48,6 +51,7 @@ export const MOCKED_CARDS = [
         userName: 'Anton M',
     },
     {
+        id: '001',
         isDone: false,
         owner: '001',
         state: CARDS_STATE.IN_PROGRESS,
@@ -57,6 +61,7 @@ export const MOCKED_CARDS = [
         userName: 'Anton M',
     },
     {
+        id: '001',
         isDone: true,
         owner: '001',
         state: CARDS_STATE.DONE,
