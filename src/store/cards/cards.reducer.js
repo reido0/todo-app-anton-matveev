@@ -1,6 +1,10 @@
-const initialState = [];
+import { MOCKED_CARDS } from '../../constants';
 
-export const cardsReducer = (
+const initialState = {
+    cards: MOCKED_CARDS,
+};
+
+export const cards = (
     state = initialState,
     action,
 ) => {

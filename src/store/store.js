@@ -6,11 +6,11 @@ import {
 } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import root from './root.saga';
-import { cardsReducer } from './cards/cards.reducer';
+import { cards } from './cards/cards.reducer';
 import { loginForm } from './loginForm/loginForm.reducer';
 
 export const rootReducer = combineReducers({
-    cardsReducer,
+    cards,
     loginForm,
 });
 

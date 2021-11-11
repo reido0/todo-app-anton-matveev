@@ -17,7 +17,10 @@ import {
     SubTitle,
 } from '../../mixins';
 import { LoginIconStyled } from './loginForm.styles';
-import { ROUTES } from '../../constants';
+import {
+    LOGIN_FORM_MESSAGES,
+    ROUTES,
+} from '../../constants';
 
 const LoginForm = ({
     isUserLogged,
@@ -85,14 +88,10 @@ const LoginForm = ({
                     type="Password"
                 />
                 {loginError && (
-                    <FormErrorText>
-                        Incorrect Login or Password!
-                    </FormErrorText>
+                    <FormErrorText>{LOGIN_FORM_MESSAGES.INCORRECT}</FormErrorText>
                 )}
                 {hasUserExist && !isUserLogged && (
-                    <FormErrorText>
-                        User or Password not found!
-                    </FormErrorText>
+                    <FormErrorText>{LOGIN_FORM_MESSAGES.NOT_FOUND}</FormErrorText>
                 )}
                 <StyledButton onClick={handleLoginButton}>
                     Login
