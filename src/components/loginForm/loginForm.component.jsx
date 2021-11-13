@@ -10,10 +10,10 @@ import {
     FormErrorText,
     FormWrapper,
     StyledButton,
-    StyledContainer,
     StyledInput,
 } from './loginForm.styles';
 import {
+    Container,
     SubTitle,
 } from '../../mixins';
 import { LoginIconStyled } from './loginForm.styles';
@@ -70,7 +70,7 @@ const LoginForm = ({
     ]);
 
     return (
-        <StyledContainer>
+        <Container>
             <SubTitle>
                 Welcome:)
             </SubTitle>
@@ -98,7 +98,7 @@ const LoginForm = ({
                     <LoginIconStyled />
                 </StyledButton>
             </FormWrapper>
-        </StyledContainer>
+        </Container>
     );
 };
 

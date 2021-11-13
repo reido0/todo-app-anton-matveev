@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
+    ButtonEdit,
+    ButtonDelete,
     Container,
     Controls,
     Description,
     StateButton,
+    TaskName,
     Title,
 } from './card.styles';
 import {
@@ -22,9 +25,13 @@ const Card = ({
     title,
 }) => (
     <Container>
-        <button onClick={() => deleteCardById(id)}>Delete</button>
-        <button onClick={() => editCardById(id)}>Edit</button>
-        <Title>{title}</Title>
+        <Controls>
+            <ButtonDelete onClick={() => deleteCardById(id)}>Delete</ButtonDelete>
+            <ButtonEdit onClick={() => editCardById(id)}>Edit</ButtonEdit>
+        </Controls>
+        <Title>Task Name:</Title>
+        <TaskName>{title}</TaskName>
+        <Title>Description:</Title>
         <Description>{description}</Description>
         <Controls>
             <StateButton

@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import {
     Button,
-    Container,
     Input,
 } from '../../mixins';
 import { PALLETE } from '../../constants';
@@ -19,6 +18,7 @@ export const LoginFormInputButton = css`
     border-radius: 4px;
     border: 1px solid ${PALLETE.BLACK};
     font-size: 16px;
+    font-family: "Poppins";
     font-weight: 400;
     height: 30px;
     line-height: 30px;
@@ -29,9 +29,6 @@ export const LoginFormInputButton = css`
 export const FormErrorText = styled.p`
     color: ${PALLETE.ERROR};
     margin-top: 10px;
-`;
-
-export const StyledContainer = styled(Container)`
 `;
 
 export const FormWrapper = styled.div`

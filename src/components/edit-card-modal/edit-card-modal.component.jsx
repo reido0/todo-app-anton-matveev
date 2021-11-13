@@ -9,6 +9,8 @@ import {
     Controls,
     DiscardButton,
     Modal,
+    StyledInput,
+    StyledTextArea,
 } from './edit-card-modal.styles';
 
 const EditCardModal = ({
@@ -20,7 +22,7 @@ const EditCardModal = ({
     const [description, setDescription] = useState(card.description);
 
     const handleSaveButton = useCallback(() => {
-        
+
 
         if (card.title !== title || card.description !== description) {
             const result = card;
@@ -32,7 +34,7 @@ const EditCardModal = ({
         } else {
             editCardById('');
         }
-        
+
     }, [
         card,
         description,
@@ -44,15 +46,17 @@ const EditCardModal = ({
     return (
         <Container>
             <Modal>
-                <input
+                <StyledInput
+                    onChange={(e) => setTitle(e.target.value)}
                     type="text"
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)}
                 />
-                <textarea
-                    rows="3"
-                    value={description}
+                <StyledTextArea
                     onChange={(e) => setDescription(e.target.value)}
+                    cols="5"
+                    rows="5"
+                    maxLength="500"
+                    value={description}
                 />
                 <Controls>
                     <Button onClick={handleSaveButton}>Save</Button>

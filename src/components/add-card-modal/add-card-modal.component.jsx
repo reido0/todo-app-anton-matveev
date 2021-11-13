@@ -9,6 +9,8 @@ import {
     Controls,
     DiscardButton,
     Modal,
+    StyledInput,
+    StyledTextArea,
 } from './add-card-modal.styles';
 
 const AddCardModal = ({
@@ -28,7 +30,7 @@ const AddCardModal = ({
             setNewCard(result);
             setShowAddNewCardModal(false);
         }
-        
+
     }, [
         description,
         setNewCard,
@@ -39,15 +41,19 @@ const AddCardModal = ({
     return (
         <Container>
             <Modal>
-                <input
+                <StyledInput
+                    onChange={(e) => setTitle(e.target.value)}
+                    placeholder="Task"
                     type="text"
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)}
                 />
-                <textarea
-                    rows="3"
-                    value={description}
+                <StyledTextArea
                     onChange={(e) => setDescription(e.target.value)}
+                    placeholder="Description"
+                    cols="5"
+                    rows="5"
+                    maxLength="500"
+                    value={description}
                 />
                 <Controls>
                     <Button onClick={handleAddButton}>Add card</Button>

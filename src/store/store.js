@@ -14,7 +14,7 @@ export const rootReducer = combineReducers({
     loginForm,
 });
 
-// проверка на девелопер мод и девтулы
+// проверка на devmod и devtool
 const composeEnhancers = process.env.NODE_ENV === 'development'
     && typeof window === 'object'
     && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
