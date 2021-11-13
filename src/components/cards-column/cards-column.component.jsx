@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
     Container,
+    EmptyState,
     Title,
 } from './cards-column.styles';
 import Card from '../card';
@@ -12,15 +13,17 @@ const CardsContainer = ({
 }) => (
     <Container>
         <Title>{title}</Title>
-        {cards && cards.length
+        {cards && (cards.length
             ? cards.map((card) => (
                 <Card
-                    key={card.id}
-                    title={card.title}
                     description={card.description}
+                    id={card.id}
+                    key={card.id}
+                    state={card.state}
+                    title={card.title}
                 />
                 ))
-            : <p>No {title}</p>
+            : <EmptyState>No {title}</EmptyState>)
         }
     </Container>
 );

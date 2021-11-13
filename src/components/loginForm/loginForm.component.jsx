@@ -24,7 +24,7 @@ import {
 
 const LoginForm = ({
     isUserLogged,
-    setLoginAndPassword,
+    checkLoginAndPassword,
 }) => {
     const history = useHistory();
     const passwordRef = useRef(null);
@@ -40,7 +40,7 @@ const LoginForm = ({
             setLoginError(false);
             setHasUserExist(true);
 
-            setLoginAndPassword({
+            checkLoginAndPassword({
                 login: email,
                 password,
             });
@@ -52,7 +52,7 @@ const LoginForm = ({
         setHasUserExist(false);
     }, [
         setHasUserExist,
-        setLoginAndPassword,
+        checkLoginAndPassword,
         setLoginError,
     ]);
 
@@ -104,7 +104,7 @@ const LoginForm = ({
 
 LoginForm.propTypes = {
     isUserLogged: PropTypes.bool,
-    setLoginAndPassword: PropTypes.func,
+    checkLoginAndPassword: PropTypes.func,
 };
 
 export default React.memo(LoginForm);

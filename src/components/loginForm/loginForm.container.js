@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import LoginForm from './loginForm.component';
-import { setLoginAndPasswordAction } from '../../store/loginForm/loginForm.actions';
+import { checkLoginAndPasswordAction } from '../../store/loginForm/loginForm.actions';
 import { getIsUserLogged } from '../../store/loginForm/loginForm.selectors';
 
 const mapStateToProps = (state) => ({
@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-    setLoginAndPassword: setLoginAndPasswordAction,
+    checkLoginAndPassword: checkLoginAndPasswordAction,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

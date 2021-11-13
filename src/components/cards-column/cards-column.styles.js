@@ -8,7 +8,11 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.p`
-    color: red;
+    color: green;
     font-size: 18px;
     font-weight: normal;
+`;
+
+export const EmptyState = styled.p`
+    color: blue;
 `;

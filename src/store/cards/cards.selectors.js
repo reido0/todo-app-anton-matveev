@@ -34,3 +34,18 @@ export const getDoneCards = createSelector(
   [getCardsForCurrentUser],
   (cards) => cards.filter((card) => card.state === CARDS_STATE.DONE),
 );
+
+export const hasCardForEdit = createSelector(
+  [getCards],
+  get('editCardId'),
+);
+
+export const getCardForEditById = createSelector(
+  [getCardsFromCards, hasCardForEdit],
+  (cards, editCardId) => cards.find((card) => card.id === editCardId),
+);
+
+export const shouldShowAddNewCardModal = createSelector(
+  [getCards],
+  get('showAddNewCardModal'),
+);

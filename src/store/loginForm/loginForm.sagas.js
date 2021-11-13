@@ -2,7 +2,7 @@ import {
     put,
     takeEvery,
 } from 'redux-saga/effects';
-import { SET_LOGIN_AND_PASSWORD } from './loginForm.constants';
+import { CHECK_LOGIN_AND_PASSWORD } from './loginForm.constants';
 import { MOCKED_USERS } from '../../constants';
 import {
     setIsUserLoggedAction,
@@ -28,5 +28,5 @@ function* setLoginAndPasswordSaga(action) {
 };
 
 export function* watchLoginFormSagas() {
-    yield takeEvery(SET_LOGIN_AND_PASSWORD, setLoginAndPasswordSaga);
+    yield takeEvery(CHECK_LOGIN_AND_PASSWORD, setLoginAndPasswordSaga);
 };

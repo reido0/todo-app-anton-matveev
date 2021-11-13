@@ -1,11 +1,11 @@
 import {
+    CHECK_LOGIN_AND_PASSWORD,
     SET_IS_USER_LOGGED,
-    SET_LOGIN_AND_PASSWORD,
     SET_USER_ID,
 } from './loginForm.constants';
 
-export const setLoginAndPasswordAction = (payload) => ({
-    type: SET_LOGIN_AND_PASSWORD,
+export const checkLoginAndPasswordAction = (payload) => ({
+    type: CHECK_LOGIN_AND_PASSWORD,
     payload,
 });
 
