@@ -4,7 +4,6 @@ import React, {
 import { useHistory } from "react-router-dom";
 import PropTypes from 'prop-types';
 import {
-    StyledContainer,
     AddNewCard,
     CardsColumnWrapper,
 } from './cards.styles';
@@ -15,6 +14,7 @@ import {
 import CardsColumn from '../cards-column';
 import EditCardModal from '../edit-card-modal';
 import AddCardModal from '../add-card-modal';
+import { Container } from '../../mixins';
 
 const Cards = ({
     cardForEdit,
@@ -38,7 +38,7 @@ const Cards = ({
 
     return (
         <>
-            <StyledContainer>
+            <Container>
                 <AddNewCard onClick={() => setShowAddNewCardModal(true)}>Add new card +</AddNewCard>
                 <CardsColumnWrapper>
                     <CardsColumn
@@ -54,8 +54,7 @@ const Cards = ({
                         cards={doneCards}
                     />
                 </CardsColumnWrapper>
-
-            </StyledContainer >
+            </Container>
             {cardForEdit && (
                 <EditCardModal card={cardForEdit} />
             )}

@@ -4,14 +4,14 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import {
-    Button,
+    AddButton,
+    CancelButton,
     Container,
     Controls,
-    DiscardButton,
     Modal,
-    StyledInput,
-    StyledTextArea,
-} from './edit-card-modal.styles';
+    ModalTextarea,
+    ModalInput,
+} from '../../mixins';
 
 const EditCardModal = ({
     card,
@@ -46,12 +46,12 @@ const EditCardModal = ({
     return (
         <Container>
             <Modal>
-                <StyledInput
+                <ModalInput
                     onChange={(e) => setTitle(e.target.value)}
                     type="text"
                     value={title}
                 />
-                <StyledTextArea
+                <ModalTextarea
                     onChange={(e) => setDescription(e.target.value)}
                     cols="5"
                     rows="5"
@@ -59,8 +59,8 @@ const EditCardModal = ({
                     value={description}
                 />
                 <Controls>
-                    <Button onClick={handleSaveButton}>Save</Button>
-                    <DiscardButton onClick={() => editCardById('')}>Cancel</DiscardButton>
+                    <AddButton onClick={handleSaveButton}>Save</AddButton>
+                    <CancelButton onClick={() => editCardById('')}>Cancel</CancelButton>
                 </Controls>
             </Modal>
         </Container>

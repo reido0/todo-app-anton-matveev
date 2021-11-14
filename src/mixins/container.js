@@ -9,7 +9,7 @@ export const Container = styled.div`
     background-size: cover;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 100vh;
     justify-content: center;
     position: relative;
 `;

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { PALLETE } from '../../constants';
+import { Button } from '../../mixins';
 
 export const Container = styled.div`
-    background-color: #ccc;
+    background-color: ${PALLETE.GRAY_1};
     border-radius: 6px;
     flex-shrink: 0;
     margin-top: 10px;
@@ -17,41 +18,30 @@ export const Controls = styled.div`
     margin-top: 10px;
 `;
 
-export const ButtonEdit = styled.button`
-    background-color: blue;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 9px;
-    padding: 5px;
-    text-transform: uppercase;
+export const ButtonEdit = styled(Button)`
+    background-color: ${PALLETE.BLUE};
 `;
 
-export const ButtonDelete = styled(ButtonEdit)`
-    background-color: #ff5050;
-    color: ${PALLETE.BLACK}
-`;
-
-export const StateButton = styled(ButtonEdit)`
+export const ButtonState = styled(ButtonEdit)`
     & + & {
         margin-left: 10px;
     }
+`;
 
-    &:disabled {
-        opacity: .2;
-    }
+export const ButtonDelete = styled(Button)`
+    background-color: ${PALLETE.RED_1};
 `;
 
 export const Title = styled.p`
-    font-size: 10px;
-    font-family: 'Poppins';
     color: ${PALLETE.BLACK};
-    opacity: 0.4;
+    font-family: 'Poppins';
+    font-size: 10px;
     margin-top: 10px;
+    opacity: .4;
 `;
 
 export const Description = styled.p`
-    background-color: white;
+    background-color: ${PALLETE.WHITE};
     border-radius: 4px;
     font-size: 14px;
     font-family: 'Poppins';
@@ -60,7 +50,5 @@ export const Description = styled.p`
 `;
 
 export const TaskName = styled(Description)`
-    && {
-        font-weight: bold;
-    }
+    font-weight: bold;
 `;

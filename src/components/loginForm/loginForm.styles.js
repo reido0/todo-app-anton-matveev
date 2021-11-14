@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import {
     Button,
+    FormBackgroud,
     Input,
 } from '../../mixins';
 import { PALLETE } from '../../constants';
@@ -31,13 +32,16 @@ export const FormErrorText = styled.p`
     margin-top: 10px;
 `;
 
+export const FormWrapperBackground = styled.div`
+    ${FormBackgroud}
+`;
+
 export const FormWrapper = styled.div`
     align-items: center;
-    backdrop-filter: blur(5px);
-    background-color: #fff6;
+    background-color: ${PALLETE.WHITE};
     border-radius: 4px;
     border: 1px solid ${PALLETE.BLACK};
-    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.7);
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +58,8 @@ export const StyledInput = styled(Input)`
 export const StyledButton = styled(Button)`
    ${LoginFormTopMargin}
    ${LoginFormInputButton}
+
    align-items: center;
-   background-color: ${PALLETE.BUTTON_FORM};
+   background-color: ${PALLETE.GREEN};
    padding: 0 10px;
 `;

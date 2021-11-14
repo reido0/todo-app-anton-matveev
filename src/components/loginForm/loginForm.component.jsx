@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import {
     FormErrorText,
     FormWrapper,
+    FormWrapperBackground,
     StyledButton,
     StyledInput,
 } from './loginForm.styles';
@@ -71,33 +72,35 @@ const LoginForm = ({
 
     return (
         <Container>
-            <SubTitle>
-                Welcome:)
-            </SubTitle>
-            <FormWrapper>
-                <StyledInput
-                    onChange={handleInputChange}
-                    placeholder="Email"
-                    ref={emailRef}
-                    type="email"
-                />
-                <StyledInput
-                    onChange={handleInputChange}
-                    placeholder="Password"
-                    ref={passwordRef}
-                    type="Password"
-                />
-                {loginError && (
-                    <FormErrorText>{LOGIN_FORM_MESSAGES.INCORRECT}</FormErrorText>
-                )}
-                {hasUserExist && !isUserLogged && (
-                    <FormErrorText>{LOGIN_FORM_MESSAGES.NOT_FOUND}</FormErrorText>
-                )}
-                <StyledButton onClick={handleLoginButton}>
-                    Login
-                    <LoginIconStyled />
-                </StyledButton>
-            </FormWrapper>
+            <FormWrapperBackground>
+                <SubTitle>
+                    Welcome:)
+                </SubTitle>
+                <FormWrapper>
+                    <StyledInput
+                        onChange={handleInputChange}
+                        placeholder="Email"
+                        ref={emailRef}
+                        type="email"
+                    />
+                    <StyledInput
+                        onChange={handleInputChange}
+                        placeholder="Password"
+                        ref={passwordRef}
+                        type="Password"
+                    />
+                    {loginError && (
+                        <FormErrorText>{LOGIN_FORM_MESSAGES.INCORRECT}</FormErrorText>
+                    )}
+                    {hasUserExist && !isUserLogged && (
+                        <FormErrorText>{LOGIN_FORM_MESSAGES.NOT_FOUND}</FormErrorText>
+                    )}
+                    <StyledButton onClick={handleLoginButton}>
+                        Login
+                        <LoginIconStyled />
+                    </StyledButton>
+                </FormWrapper>
+            </FormWrapperBackground>
         </Container>
     );
 };

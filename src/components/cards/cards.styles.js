@@ -1,11 +1,9 @@
 import styled from 'styled-components';
-import BackGroundImg from '../../assets/img/bg.jpg';
 import { Title } from '../cards-column/cards-column.styles';
-import { Container } from '../../mixins';
-
-export const StyledContainer = styled(Container)`
-    
-`;
+import {
+    BACKDROP_FILTER_VALUE,
+    PALLETE,
+} from '../../constants';
 
 export const CardsColumnWrapper = styled.div`
     display: flex;
@@ -15,11 +13,15 @@ export const CardsColumnWrapper = styled.div`
 `;
 
 export const AddNewCard = styled(Title)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
     width: 100%;
     height: 50px;
-    color: black;
+    color: ${PALLETE.BLACK};
     cursor: pointer;
     text-align: center;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(${BACKDROP_FILTER_VALUE}px);
+    background-color: ${PALLETE.WHITE_2};
 `;

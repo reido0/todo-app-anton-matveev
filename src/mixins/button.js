@@ -1,17 +1,24 @@
 import styled from 'styled-components';
+import { PALLETE } from '../constants';
 
 export const Button = styled.button`
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    transition: 0.3s;
-    &:hover {
-    cursor: pointer;
-    backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.1);
-    }
-    &:active {
     border-radius: 4px;
-    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    color: ${PALLETE.WHITE};
+    cursor: pointer;
+    font-size: 9px;
+    padding: 5px;
+    text-transform: uppercase;
+    transition: .3s;
+
+    &:hover {
+        background-color: ${PALLETE.BLACK_3};
+    }
+    
+    &:active {
+        box-shadow: inset -2px -2px 3px ${PALLETE.WHITE_1}, inset 2px 2px 3px ${PALLETE.BLACK_2};
+    }
+
+    &:disabled {
+        opacity: .2;
     }
 `;
