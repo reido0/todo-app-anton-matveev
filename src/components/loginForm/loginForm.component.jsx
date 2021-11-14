@@ -12,11 +12,9 @@ import {
     FormWrapperBackground,
     StyledButton,
     StyledInput,
+    Title,
 } from './loginForm.styles';
-import {
-    Container,
-    SubTitle,
-} from '../../mixins';
+import { Container } from '../../mixins';
 import { LoginIconStyled } from './loginForm.styles';
 import {
     LOGIN_FORM_MESSAGES,
@@ -73,9 +71,9 @@ const LoginForm = ({
     return (
         <Container>
             <FormWrapperBackground>
-                <SubTitle>
+                <Title>
                     Welcome:)
-                </SubTitle>
+                </Title>
                 <FormWrapper>
                     <StyledInput
                         onChange={handleInputChange}

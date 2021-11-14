@@ -1,31 +1,12 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import {
     Button,
     FormBackgroud,
-    Input,
 } from '../../mixins';
 import { PALLETE } from '../../constants';
 import { ReactComponent as SignInIcon } from '../../assets/svg/signInIcon.svg';
 
-export const LoginIconStyled = styled(SignInIcon)`
-    height: 20px;
-`;
-
-export const LoginFormTopMargin = css`
-    margin-top: 10px;
-`;
-
-export const LoginFormInputButton = css`
-    border-radius: 4px;
-    border: 1px solid ${PALLETE.BLACK};
-    font-size: 16px;
-    font-family: "Poppins";
-    font-weight: 400;
-    height: 30px;
-    line-height: 30px;
-    outline: none;
-    width: 100%;
-`;
+const FORM_WRAPPER_WIDTH = 300;
 
 export const FormErrorText = styled.p`
     color: ${PALLETE.ERROR};
@@ -41,25 +22,47 @@ export const FormWrapper = styled.div`
     background-color: ${PALLETE.WHITE};
     border-radius: 4px;
     border: 1px solid ${PALLETE.BLACK};
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 10px;
     padding: 0 10px 10px;
-    width: 300px;
+    width: ${FORM_WRAPPER_WIDTH}px;
 `;
 
-export const StyledInput = styled(Input)`
-    ${LoginFormTopMargin}
-    ${LoginFormInputButton}
+export const StyledInput = styled.input`
+    border-radius: 4px;
+    border: 1px solid ${PALLETE.BLACK};
+    font-size: 16px;
+    font-weight: 400;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    outline: none;
+    padding: 0 10px;
+    width: 100%;
 `;
 
 export const StyledButton = styled(Button)`
-   ${LoginFormTopMargin}
-   ${LoginFormInputButton}
+    align-items: center;
+    background-color: ${PALLETE.GREEN};
+    display: flex;
+    font-size: 16px;
+    height: 30px;
+    justify-content: space-between;
+    line-height: 30px;
+    margin-top: 10px;
+    padding: 0 10px;
+    text-transform: none;
+    width: 100%;
+`;
 
-   align-items: center;
-   background-color: ${PALLETE.GREEN};
-   padding: 0 10px;
+export const LoginIconStyled = styled(SignInIcon)`
+    height: 20px;
+`;
+
+export const Title = styled.h2`
+    color:${PALLETE.WHITE};
+    font-weight: normal;
+    text-align: center;
 `;

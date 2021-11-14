@@ -6,12 +6,13 @@ import PropTypes from 'prop-types';
 import {
     AddButton,
     CancelButton,
-    Container,
+    ModalContainer,
     Controls,
     Modal,
     ModalTextarea,
     ModalInput,
 } from '../../mixins';
+import { MODAL_PLACEHOLDERS } from '../../constants';
 
 const AddCardModal = ({
     setNewCard,
@@ -39,20 +40,20 @@ const AddCardModal = ({
     ]);
 
     return (
-        <Container>
+        <ModalContainer>
             <Modal>
                 <ModalInput
                     onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Task"
+                    placeholder={MODAL_PLACEHOLDERS.INPUT}
                     type="text"
                     value={title}
                 />
                 <ModalTextarea
-                    onChange={(e) => setDescription(e.target.value)}
-                    placeholder="Description"
                     cols="5"
-                    rows="5"
                     maxLength="500"
+                    onChange={(e) => setDescription(e.target.value)}
+                    placeholder={MODAL_PLACEHOLDERS.TEXTAREA}
+                    rows="5"
                     value={description}
                 />
                 <Controls>
@@ -60,7 +61,7 @@ const AddCardModal = ({
                     <CancelButton onClick={() => setShowAddNewCardModal(false)}>Cancel</CancelButton>
                 </Controls>
             </Modal>
-        </Container>
+        </ModalContainer>
     );
 };
 

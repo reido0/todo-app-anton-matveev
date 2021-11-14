@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { PALLETE } from '../../constants';
 import { FormBackgroud } from '../../mixins';
 
+const CARDS_CONTAINER_WIDTH = 304;
+
 export const Container = styled.div`
     ${FormBackgroud}
 
@@ -9,14 +11,16 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     margin: 20px;
-    max-width: 304px;
-    min-width: 304px;
+    width: ${CARDS_CONTAINER_WIDTH}px;
     overflow-y: auto;
+
+    @media only screen and (min-width: 320px) and (max-width: 768px) {
+        margin: 20px auto;
+    }
 `;
 
 export const Title = styled.p`
     color: ${PALLETE.BLACK};
-    font-family: 'Poppins';
     font-size: 18px;
     font-weight: normal;
 `;

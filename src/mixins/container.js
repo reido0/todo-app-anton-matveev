@@ -3,9 +3,7 @@ import BackGroundImg from '../assets/img/bg.jpg';
 
 export const Container = styled.div`
     align-items: center;
-    background-image: url(${BackGroundImg});
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url(${BackGroundImg}) center center no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;

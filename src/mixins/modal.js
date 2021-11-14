@@ -4,7 +4,7 @@ import { Button } from './button';
 
 const MODAL_WIDTH = 300;
 
-export const Container = styled.div`
+export const ModalContainer = styled.div`
     align-items: center;
     background-color: ${PALLETE.BLACK_1};
     bottom: 0;
@@ -48,7 +48,6 @@ export const CancelButton = styled(Button)`
 const InputStyles = css`
     border-radius: 4px;
     border: 1px solid ${PALLETE.BLACK};
-    font-family: 'Poppins';
     font-size: 16px;
     font-weight: 400;
     margin-top: 10px;
@@ -68,4 +67,5 @@ export const ModalTextarea = styled.textarea`
     ${InputStyles}
 
     resize: none;
+    font-family: 'Poppins', sans-serif;
 `;

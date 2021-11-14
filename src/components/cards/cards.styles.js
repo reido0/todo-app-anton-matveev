@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Title } from '../cards-column/cards-column.styles';
 import {
     BACKDROP_FILTER_VALUE,
     PALLETE,
@@ -7,21 +6,22 @@ import {
 
 export const CardsColumnWrapper = styled.div`
     display: flex;
-    flex-direction: row;
     flex-grow: 1;
     flex-wrap: wrap;
 `;
 
-export const AddNewCard = styled(Title)`
-    display: flex;
-    justify-content: center;
+export const AddNewCard = styled.button`
     align-items: center;
-    flex-shrink: 0;
-    width: 100%;
-    height: 50px;
-    color: ${PALLETE.BLACK};
-    cursor: pointer;
-    text-align: center;
     backdrop-filter: blur(${BACKDROP_FILTER_VALUE}px);
     background-color: ${PALLETE.WHITE_2};
+    color: ${PALLETE.BLACK};
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    font-size: 18px;
+    font-weight: normal;
+    height: 50px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
 `;
