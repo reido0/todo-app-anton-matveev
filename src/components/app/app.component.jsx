@@ -9,25 +9,28 @@ import { store } from '../../store/store';
 import LoginForm from '../loginForm';
 import Cards from '../cards';
 import { ROUTES } from '../../constants';
+import Theme from '../theme';
 
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
-      <Switch>
-        <Route
-          path={ROUTES.LOGIN}
-          exact
-        >
-          <LoginForm />
-        </Route>
-        <Route
-          path={ROUTES.CARDS}
-          exact
-        >
-          <Cards />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <Theme>
+      <BrowserRouter>
+        <Switch>
+          <Route
+            path={ROUTES.LOGIN}
+            exact
+          >
+            <LoginForm />
+          </Route>
+          <Route
+            path={ROUTES.CARDS}
+            exact
+          >
+            <Cards />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </Theme>
   </Provider>
 );
 

@@ -7,14 +7,17 @@ import React, {
 import { useHistory } from "react-router-dom";
 import PropTypes from 'prop-types';
 import {
-    FormErrorText,
     FormWrapper,
     FormWrapperBackground,
+    RegisterButton,
     StyledButton,
     StyledInput,
     Title,
 } from './loginForm.styles';
-import { Container } from '../../mixins';
+import {
+    Container,
+    ErrorMessage,
+} from '../../mixins';
 import { LoginIconStyled } from './loginForm.styles';
 import {
     LOGIN_FORM_MESSAGES,
@@ -22,37 +25,56 @@ import {
 } from '../../constants';
 
 const LoginForm = ({
-    isUserLogged,
     checkLoginAndPassword,
+    isUserLogged,
+    registerNewUser,
 }) => {
     const history = useHistory();
     const passwordRef = useRef(null);
     const emailRef = useRef(null);
+    const userNameRef = useRef(null);
     const [loginError, setLoginError] = useState(false);
     const [hasUserExist, setHasUserExist] = useState(false);
+    const [register, setRegister] = useState(false);
 
     const handleLoginButton = useCallback(() => {
-        const email = emailRef.current.value;
+        const login = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        if (email && password) {
-            setLoginError(false);
-            setHasUserExist(true);
+        if (login && password) {
+            if (register) {
+                const userName = userNameRef.current.value;
 
-            checkLoginAndPassword({
-                login: email,
-                password,
-            });
+                registerNewUser({
+                    userName,
+                    login,
+                    password,
+                });
 
-            return;
+                return;
+            } else {
+                setLoginError(false);
+                setHasUserExist(true);
+
+                checkLoginAndPassword({
+                    login,
+                    password,
+                });
+
+                return;
+            }
         }
 
         setLoginError(true);
         setHasUserExist(false);
+        setRegister(false);
     }, [
-        setHasUserExist,
         checkLoginAndPassword,
+        register,
+        registerNewUser,
+        setHasUserExist,
         setLoginError,
+        setRegister,
     ]);
 
     const handleInputChange = useCallback(() => {
@@ -75,6 +97,14 @@ const LoginForm = ({
                     Welcome:)
                 </Title>
                 <FormWrapper>
+                    {register && (
+                        <StyledInput
+                            onChange={handleInputChange}
+                            placeholder="User Name"
+                            ref={userNameRef}
+                            type="text"
+                        />
+                    )}
                     <StyledInput
                         onChange={handleInputChange}
                         placeholder="Email"
@@ -87,14 +117,17 @@ const LoginForm = ({
                         ref={passwordRef}
                         type="Password"
                     />
-                    {loginError && (
-                        <FormErrorText>{LOGIN_FORM_MESSAGES.INCORRECT}</FormErrorText>
+                    {loginError && !register && (
+                        <ErrorMessage>{LOGIN_FORM_MESSAGES.INCORRECT}</ErrorMessage>
                     )}
-                    {hasUserExist && !isUserLogged && (
-                        <FormErrorText>{LOGIN_FORM_MESSAGES.NOT_FOUND}</FormErrorText>
+                    {hasUserExist && !isUserLogged && !register && (
+                        <>
+                            <ErrorMessage>{LOGIN_FORM_MESSAGES.NOT_FOUND}</ErrorMessage>
+                            <ErrorMessage>Please, <RegisterButton onClick={() => setRegister(true)}>register</RegisterButton>!</ErrorMessage>
+                        </>
                     )}
                     <StyledButton onClick={handleLoginButton}>
-                        Login
+                        {register ? 'Register new user' : 'Login'}
                         <LoginIconStyled />
                     </StyledButton>
                 </FormWrapper>
@@ -104,8 +137,9 @@ const LoginForm = ({
 };
 
 LoginForm.propTypes = {
-    isUserLogged: PropTypes.bool,
     checkLoginAndPassword: PropTypes.func,
+    isUserLogged: PropTypes.bool,
+    registerNewUser: PropTypes.func,
 };
 
 export default React.memo(LoginForm);

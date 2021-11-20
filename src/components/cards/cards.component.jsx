@@ -14,6 +14,7 @@ import {
 import CardsColumn from '../cards-column';
 import EditCardModal from '../edit-card-modal';
 import AddCardModal from '../add-card-modal';
+import Header from '../header';
 import { Container } from '../../mixins';
 
 const Cards = ({
@@ -39,6 +40,7 @@ const Cards = ({
     return (
         <>
             <Container>
+                <Header />
                 <AddNewCard onClick={() => setShowAddNewCardModal(true)}>Add new card +</AddNewCard>
                 <CardsColumnWrapper>
                     <CardsColumn

@@ -1,17 +1,23 @@
 import {
+    call,
     put,
+    select,
     takeEvery,
 } from 'redux-saga/effects';
-import { CHECK_LOGIN_AND_PASSWORD } from './loginForm.constants';
-import { MOCKED_USERS } from '../../constants';
 import {
+    CHECK_LOGIN_AND_PASSWORD,
+    REGISTER_NEW_USER,
+} from './loginForm.constants';
+import {
+    addNewUserDataAction,
     setIsUserLoggedAction,
     setUserIdAction,
 } from './loginForm.actions';
+import { getUsers } from './loginForm.selectors';
 
-function* setLoginAndPasswordSaga(action) {
-    const { login, password } = action.payload;
-    const hasUserLogin = MOCKED_USERS.find((user) => user.login === login);
+function* setloginAndPasswordSaga(login, password) {
+    const currentUsers = yield select(getUsers);
+    const hasUserLogin = currentUsers.find((user) => user.login === login);
 
     if (hasUserLogin) {
         if (hasUserLogin.password === password) {
@@ -27,6 +33,27 @@ function* setLoginAndPasswordSaga(action) {
     }
 };
 
+function* checkLoginAndPasswordSaga(action) {
+    const { login, password } = action.payload;
+
+    yield call(setloginAndPasswordSaga, login, password);
+};
+
+function* registerNewUserSaga(action) {
+    const { login, password, userName } = action.payload;
+    const currentUsers = yield select(getUsers);
+    
+    yield put(addNewUserDataAction({
+        id: String(currentUsers.length + 1),
+        login,
+        password,
+        userName,
+    }));
+
+    yield call(setloginAndPasswordSaga, login, password);
+};
+
 export function* watchLoginFormSagas() {
-    yield takeEvery(CHECK_LOGIN_AND_PASSWORD, setLoginAndPasswordSaga);
+    yield takeEvery(CHECK_LOGIN_AND_PASSWORD, checkLoginAndPasswordSaga);
+    yield takeEvery(REGISTER_NEW_USER, registerNewUserSaga);
 };

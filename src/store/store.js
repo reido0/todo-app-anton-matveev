@@ -8,10 +8,12 @@ import createSagaMiddleware from 'redux-saga';
 import root from './root.saga';
 import { cards } from './cards/cards.reducer';
 import { loginForm } from './loginForm/loginForm.reducer';
+import { theme } from './theme/theme.reducer';
 
 export const rootReducer = combineReducers({
     cards,
     loginForm,
+    theme,
 });
 
 // проверка на devmod и devtool

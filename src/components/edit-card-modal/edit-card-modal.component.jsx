@@ -6,13 +6,17 @@ import PropTypes from 'prop-types';
 import {
     AddButton,
     CancelButton,
-    ModalContainer,
     Controls,
+    ErrorMessage,
     Modal,
-    ModalTextarea,
+    ModalContainer,
     ModalInput,
+    ModalTextarea,
 } from '../../mixins';
-import { MODAL_PLACEHOLDERS } from '../../constants';
+import {
+    ERROR_MESSAGES,
+    MODAL_PLACEHOLDERS,
+} from '../../constants';
 
 const EditCardModal = ({
     card,
@@ -21,9 +25,16 @@ const EditCardModal = ({
 }) => {
     const [title, setTitle] = useState(card.title);
     const [description, setDescription] = useState(card.description);
+    const [error, setError] = useState(false);
 
     const handleSaveButton = useCallback(() => {
+        if (!title || !description) {
+            setError(true);
 
+            return;
+        } else {
+            setError(false);
+        }
 
         if (card.title !== title || card.description !== description) {
             const result = card;
@@ -61,6 +72,9 @@ const EditCardModal = ({
                     rows="5"
                     value={description}
                 />
+                {error && (
+                    <ErrorMessage>{ERROR_MESSAGES.MUST_BE_FILLED}</ErrorMessage>
+                )}
                 <Controls>
                     <AddButton onClick={handleSaveButton}>Save</AddButton>
                     <CancelButton onClick={() => editCardById('')}>Cancel</CancelButton>

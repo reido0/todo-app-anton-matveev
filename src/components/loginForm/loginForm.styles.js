@@ -8,18 +8,13 @@ import { ReactComponent as SignInIcon } from '../../assets/svg/signInIcon.svg';
 
 const FORM_WRAPPER_WIDTH = 300;
 
-export const FormErrorText = styled.p`
-    color: ${PALLETE.ERROR};
-    margin-top: 10px;
-`;
-
 export const FormWrapperBackground = styled.div`
     ${FormBackgroud}
 `;
 
 export const FormWrapper = styled.div`
     align-items: center;
-    background-color: ${PALLETE.WHITE};
+    background-color: ${props => props.theme.colors.cardBgPrimary};
     border-radius: 4px;
     border: 1px solid ${PALLETE.BLACK};
     display: flex;
@@ -65,4 +60,13 @@ export const Title = styled.h2`
     color:${PALLETE.WHITE};
     font-weight: normal;
     text-align: center;
+`;
+
+export const RegisterButton = styled.span`
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
 `;

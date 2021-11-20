@@ -3,7 +3,7 @@ import { PALLETE } from '../../constants';
 import { Button } from '../../mixins';
 
 export const Container = styled.div`
-    background-color: ${PALLETE.GRAY_1};
+    background-color: ${props => props.theme.colors.cardBgSecondary};
     border-radius: 6px;
     flex-shrink: 0;
     margin-top: 10px;
