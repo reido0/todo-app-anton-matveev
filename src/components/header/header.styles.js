@@ -73,15 +73,15 @@ export const Switcher = styled.div`
 
     ${SwitcherToggler} {
         ${props => props.isActive
-            ? `left: ${SWITCHR_TOGGLER_POSITION}px`
-            : `right: ${SWITCHR_TOGGLER_POSITION}px`
-        }
+        ? `left: ${SWITCHR_TOGGLER_POSITION}px`
+        : `right: ${SWITCHR_TOGGLER_POSITION}px`
+    }
     }
 `;
 
 export const SwitcherContainer = styled.div`
     align-items: center;
-    color: ${PALLETE.BLACK};
+    color: ${props => props.theme.colors.cardTitle};;
     display: flex;
     font-size: 14px;
 `;

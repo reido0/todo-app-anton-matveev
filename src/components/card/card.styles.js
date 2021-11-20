@@ -32,7 +32,7 @@ export const ButtonDelete = styled(Button)`
 `;
 
 export const Title = styled.p`
-    color: ${PALLETE.BLACK};
+    color: ${props => props.theme.colors.cardTitle};
     font-size: 10px;
     margin-top: 10px;
     opacity: .4;

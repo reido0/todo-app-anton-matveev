@@ -10,13 +10,15 @@ const light = {
   colors: {
     cardBgPrimary: PALLETE.WHITE,
     cardBgSecondary: PALLETE.GRAY_1,
+    cardTitle: PALLETE.BLACK,
   },
 };
 
 const dark = {
   colors: {
-    cardBgPrimary: PALLETE.BLACK,
-    cardBgSecondary: PALLETE.WHITE,
+    cardBgPrimary: PALLETE.BLACK_2,
+    cardBgSecondary: PALLETE.BLACK_2,
+    cardTitle: PALLETE.WHITE,
   },
 };
 
