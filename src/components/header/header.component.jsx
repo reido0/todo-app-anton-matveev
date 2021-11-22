@@ -16,6 +16,7 @@ import {
 import {
     AVATAR_URL,
     THEME,
+    SWITCHER_TEXT,
 } from '../../constants';
 
 const Header = ({
@@ -25,25 +26,26 @@ const Header = ({
     userData,
 }) => {
     const [showLogOut, setShowLogOut] = useState(false);
+    const isLightTheme = themeVariant === THEME.LIGHT;
 
     const handleSwitcherClick = useCallback(() => {
-        if (themeVariant === THEME.LIGHT) {
+        if (isLightTheme) {
             setTheme(THEME.DARK);
         } else {
             setTheme(THEME.LIGHT);
         }
     }, [
+        isLightTheme,
         setTheme,
-        themeVariant,
     ]);
 
     return (
         <Container>
             <SwitcherContainer onClick={handleSwitcherClick}>
-                <Switcher isActive={themeVariant === THEME.LIGHT}>
+                <Switcher isActive={isLightTheme}>
                     <SwitcherToggler />
                 </Switcher>
-                Switch to dark mode
+                {isLightTheme ? SWITCHER_TEXT.DARK : SWITCHER_TEXT.LIGHT}
             </SwitcherContainer>
             {userData && (
                 <UserButton
