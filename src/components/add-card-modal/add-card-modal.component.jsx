@@ -31,7 +31,6 @@ const AddCardModal = ({
             setNewCard(result);
             setShowAddNewCardModal(false);
         }
-
     }, [
         description,
         setNewCard,

@@ -15,7 +15,7 @@ import {
 } from './loginForm.actions';
 import { getUsers } from './loginForm.selectors';
 
-function* setloginAndPasswordSaga(login, password) {
+function* setLoginAndPasswordSaga(login, password) {
     const currentUsers = yield select(getUsers);
     const hasUserLogin = currentUsers.find((user) => user.login === login);
 
@@ -36,13 +36,13 @@ function* setloginAndPasswordSaga(login, password) {
 function* checkLoginAndPasswordSaga(action) {
     const { login, password } = action.payload;
 
-    yield call(setloginAndPasswordSaga, login, password);
+    yield call(setLoginAndPasswordSaga, login, password);
 };
 
 function* registerNewUserSaga(action) {
     const { login, password, userName } = action.payload;
     const currentUsers = yield select(getUsers);
-    
+
     yield put(addNewUserDataAction({
         id: String(currentUsers.length + 1),
         login,
@@ -50,7 +50,7 @@ function* registerNewUserSaga(action) {
         userName,
     }));
 
-    yield call(setloginAndPasswordSaga, login, password);
+    yield call(setLoginAndPasswordSaga, login, password);
 };
 
 export function* watchLoginFormSagas() {

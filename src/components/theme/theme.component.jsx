@@ -26,7 +26,11 @@ const Theme = ({
   children,
   themeVariant,
 }) => (
-  <ThemeProvider theme={themeVariant === THEME.LIGHT ? light : dark}>{children}</ThemeProvider>
+  <ThemeProvider
+    theme={themeVariant === THEME.LIGHT ? light : dark}
+  >
+    {children}
+  </ThemeProvider>
 );
 
 Theme.propTypes = {

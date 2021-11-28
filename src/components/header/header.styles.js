@@ -81,7 +81,7 @@ export const Switcher = styled.div`
 
 export const SwitcherContainer = styled.div`
     align-items: center;
-    color: ${props => props.theme.colors.cardTitle};;
+    color: ${props => props.theme.colors.cardTitle};
     display: flex;
     font-size: 14px;
 `;
